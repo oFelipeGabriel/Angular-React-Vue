@@ -1,3 +1,6 @@
+html{
+  overflow: overlay;
+}
 .App {
   text-align: center;
 }
@@ -26,6 +29,13 @@
 
 .App-link {
   color: #61dafb;
+}
+
+main{
+  margin-top: 3.5rem;
+}
+.m-auto{
+  margin: 0 auto
 }
 
 @keyframes App-logo-spin {

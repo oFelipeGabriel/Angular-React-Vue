@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  display: boolean = false;
   title = 'angular-app';
+
+  aoClicar(event: any){
+    this.display = true;
+    console.log('clicou', event)
+  }
 }

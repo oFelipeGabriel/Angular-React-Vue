@@ -1,0 +1,10 @@
+.spinner{
+    width: 100%;
+    text-align: center;
+}
+.noticias{
+    width: 100%;
+    .p-card::ng-deep{
+        margin: 0 auto;
+    }
+}

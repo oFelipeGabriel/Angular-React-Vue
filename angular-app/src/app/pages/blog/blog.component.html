@@ -1,0 +1,25 @@
+<div>
+    <app-menu [index]="1" ></app-menu>
+    <div class="spinner">
+        <p-progressSpinner *ngIf="carregando"></p-progressSpinner>
+    </div>
+    <div class="posts">
+        <div *ngFor="let post of posts">
+            <p-card 
+                [style]="{'min-width': '25rem', 'width':'40%','margin': '2em auto'}"
+                [header]="post.title" 
+                styleClass="p-card-shadow"
+            >
+                <ng-template pTemplate="header">
+                    <img alt="Card" [src]="post.imageUrl">
+                </ng-template>
+                <ng-template pTemplate="content">
+                    {{post.summary}}
+                </ng-template>
+                <ng-template pTemplate="footer">
+                    <a target="_blank" [href]="post.url">Ver mais</a>
+                </ng-template>
+            </p-card>
+        </div>
+    </div>
+</div>

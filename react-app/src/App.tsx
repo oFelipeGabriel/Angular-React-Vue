@@ -1,24 +1,49 @@
 import React from 'react';
-import logo from './logo.svg';
+import {
+  Routes,
+  Route,
+} from "react-router-dom";
 import './App.css';
 
+import "primereact/resources/themes/lara-light-indigo/theme.css";  //theme
+import "primereact/resources/primereact.min.css";                  //core css
+import "primeicons/primeicons.css";                                //icons
+
+import Home from './pages/Home';
+import Cabecalho from './components/Cabecalho'
+import Rodape from './components/Rodape';
+import Blog from './pages/Blog';
+
+import { Dialog } from 'primereact/dialog';
+
 function App() {
+
+  const [verAlerta, setVerAlerta] = React.useState(false)
+
+  const clicaBotao = ()=>{
+    setVerAlerta(true)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Cabecalho />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/blog" element={<Blog />} />
+      </Routes>
+      
+      <Rodape texto='Texto ' clicaBotao={clicaBotao}/>
+      <Dialog 
+        visible={verAlerta} 
+        position='top-right'
+        modal 
+        onHide={() => setVerAlerta(false)}
+        style={{ width: '50vw' }}
+        header="Header">
+          <p className="m-0">
+            Aqui tem o Dialog
+          </p>
+        </Dialog>
     </div>
   );
 }

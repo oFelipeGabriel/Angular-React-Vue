@@ -7,15 +7,29 @@ import { Noticia } from '../models/Noticia.model';
   providedIn: 'root'
 })
 export class ApiService {
-  url: string = 'https://api.spaceflightnewsapi.net/v3/articles?_limit=5'
+  url: string = 'https://api.spaceflightnewsapi.net/v3/'
   constructor(private http: HttpClient) { }
 
   getNews(): Observable<any> {
-    return this.http.get(this.url).pipe(
+    let noticiaUrl = this.url+'articles';
+    const params: any = {_limit: 5}
+    return this.http.get(noticiaUrl, {params}).pipe(
       map(
         (response: any) => response.map(
           (r: Noticia) => (new Noticia(r))
           ))
+    )
+  }
+
+  getBlogPosts(): Observable<any> {
+    let blogUrl = this.url+'blogs';
+    const params: any = {_limit: 5}
+    return this.http.get(blogUrl, {params}).pipe(
+      map(
+        (response: any) => response.map(
+          (r: Noticia) => (new Noticia(r))
+        )
+      )
     )
   }
 }

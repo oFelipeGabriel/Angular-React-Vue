@@ -99,6 +99,9 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/primeng/resources/themes/luna-pink/theme.css",     
+              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/primeicons/primeicons.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -107,5 +110,8 @@
       }
     }
   },
-  "defaultProject": "angular-app"
+  "defaultProject": "angular-app",
+  "cli": {
+    "analytics": "884c58ff-d62d-4b2a-89c8-88d48ecdc8ab"
+  }
 }

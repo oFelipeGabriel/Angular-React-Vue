@@ -3,13 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "start": "vue-cli-service serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "core-js": "^3.8.3",
-    "vue": "^3.2.13"
+    "primeicons": "^5.0.0",
+    "primevue": "^3.15.0",
+    "vue": "^3.2.13",
+    "vue-router": "^4.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

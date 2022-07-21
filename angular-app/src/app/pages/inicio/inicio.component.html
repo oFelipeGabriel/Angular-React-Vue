@@ -1,6 +1,26 @@
 
 <div>
-    <div *ngFor="let noticia of noticias">
-        <h1>{{noticia.title}}</h1>
+    <app-menu [index]="0" ></app-menu>
+    <div class="spinner">
+        <p-progressSpinner *ngIf="carregando"></p-progressSpinner>
+    </div>
+    <div class="noticias">
+        <div *ngFor="let noticia of noticias">
+            <p-card 
+                [style]="{'min-width': '25rem', 'width':'40%','margin': '2em auto'}"
+                [header]="noticia.title" 
+                styleClass="p-card-shadow"
+            >
+                <ng-template pTemplate="header">
+                    <img alt="Card" [src]="noticia.imageUrl">
+                </ng-template>
+                <ng-template pTemplate="content">
+                    {{noticia.summary}}
+                </ng-template>
+                <ng-template pTemplate="footer">
+                    <a target="_blank" [href]="noticia.url">Ver mais</a>
+                </ng-template>
+            </p-card>
+        </div>
     </div>
 </div>

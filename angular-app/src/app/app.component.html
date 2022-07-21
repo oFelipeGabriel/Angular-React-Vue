@@ -1,2 +1,12 @@
-
-<router-outlet></router-outlet>
+<app-cabecalho></app-cabecalho>
+<main>
+    <router-outlet></router-outlet>
+</main>
+<app-rodape texto="Texto do rodapé" (clicaBotao)="aoClicar($event)"></app-rodape>
+<p-dialog 
+    [modal]="true"
+    header="Title" 
+    position="top-right"
+    [(visible)]="display">
+    Aqui fica o texto do Dialog
+</p-dialog>
